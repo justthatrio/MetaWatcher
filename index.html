@@ -5,7 +5,23 @@
   const urlParam = new URLSearchParams(window.location.search).get("token");
   
   document.querySelector("#code").innerText = urlParam;
-  <style type="text/css">
+  
+  function copy() {
+  // Get the text field
+  var copyText = document.querySelector("#code");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+
+  // Alert the copied text
+  alert("Copied the code!");
+}
+</script>
+<style type="text/css">
   
 #code {
   box-shadow: #00000091 0px 4px 10px -4px, #0000001c 0px 0px 2px 1px;
@@ -37,18 +53,3 @@ button:hover {
   filter: brightness(1.6);
 }
   </style>
-  function copy() {
-  // Get the text field
-  var copyText = document.querySelector("#code");
-
-  // Select the text field
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); // For mobile devices
-
-   // Copy the text inside the text field
-  navigator.clipboard.writeText(copyText.value);
-
-  // Alert the copied text
-  alert("Copied the code!");
-}
-</script>
