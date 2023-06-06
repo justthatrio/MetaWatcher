@@ -1,7 +1,54 @@
 <div id="code"></div>
+<button onclick="copy()">Copy</button>
 
 <script>
   const urlParam = new URLSearchParams(window.location.search).get("token");
   
   document.querySelector("#code").innerText = urlParam;
+  <style type="text/css">
+  
+#code {
+  box-shadow: #00000091 0px 4px 10px -4px, #0000001c 0px 0px 2px 1px;
+  margin: auto;
+  padding: 8px;
+  border-radius: 8px;
+  min-width: 30vw;
+  text-align: center;
+  font-size: 1.5em;
+  margin-right: 10px;
+  background-color: #86e8ff3b;
+  color: #055f82;
+  font-weight: bold;
+  font-family: arial;
+}
+body {
+  display: flex;
+  padding: 5vw;
+}
+button {
+  margin-right: auto;
+  border-radius: 8px;
+  background-color: #875bff3b;
+  box-shadow: #00000091 0px 4px 10px -4px, #0000001c 0px 0px 2px 1px;
+  border: none;
+  padding: 0px 30px;
+}
+button:hover {
+  filter: brightness(1.6);
+}
+  </style>
+  function copy() {
+  // Get the text field
+  var copyText = document.querySelector("#code");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+
+  // Alert the copied text
+  alert("Copied the code!");
+}
 </script>
