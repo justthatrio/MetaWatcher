@@ -1,0 +1,7 @@
+<div id="code"></div>
+
+<script>
+  const urlParam = new URLSearchParams(window.location.search).get("token");
+  
+  document.querySelector("#code").innerText = urlParam;
+</script>
