@@ -2,8 +2,10 @@
 <button onclick="copy()">Copy</button>
 
 <script>
-  const urlParam = new URLSearchParams(window.location.search).get("token");
-  
+  const urlParam = new URLSearchParams(window.location.search).get("access_token");
+  if(urlParam === "" ) {
+    return window.location = "https://id.twitch.tv/oauth2/authorize?client_id=ttpg609zqkcgru79fm26g6llfjeagd&redirect_uri=https://justthatrio.github.io/MetaWatcher/&response_type=token&scope=chat:edit%20chat:read%20channel:moderate";
+  }
   document.querySelector("#code").innerText = urlParam;
   
   function copy() {
