@@ -18,7 +18,7 @@
   if(copyText.setSelectionRange) copyText.setSelectionRange(0, 99999); // For mobile devices
 
    // Copy the text inside the text field
-  navigator.clipboard.writeText(copyText.innerText);
+  navigator.clipboard.writeText(urlParam);
 
   // Alert the copied text
   alert("Copied the code!");
